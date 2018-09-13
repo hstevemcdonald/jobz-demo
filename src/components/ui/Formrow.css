@@ -1,0 +1,15 @@
+div.Formrow {
+  width: 50%;
+}
+
+div.Formrow label {
+  color: red;
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+div.Formrow input {
+  display: block;
+  font-size: 16px;
+}
