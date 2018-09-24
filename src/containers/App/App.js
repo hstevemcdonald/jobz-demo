@@ -1,20 +1,15 @@
 import React, { Component } from "react";
+import App from "../../components/App/App";
 import "./App.css";
 
-import MyjobsContainer from "../MyjobsContainer/MyjobsContainer";
-
-class App extends Component {
+class AppContainer extends Component {
   constructor(props) {
     super(props);
   }
 
-  render() {
-    return (
-      <div className="App">
-        <MyjobsContainer />
-      </div>
-    );
+  render(props) {
+    return <App {...props} />;
   }
 }
 
-export default App;
+export default AppContainer;
