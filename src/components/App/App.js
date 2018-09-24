@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Navigation from "../common/Navigation/Navigation";
 import Error404 from "../common/Error404/Error404";
 import Jobz from "../../containers/Jobz/Jobz";

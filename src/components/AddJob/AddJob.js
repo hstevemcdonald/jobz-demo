@@ -24,7 +24,6 @@ const Addjob = props => {
         type="textarea"
         id="description"
         name="company"
-        type="textarea"
         placeholder="Enter job description"
       />
       <Form

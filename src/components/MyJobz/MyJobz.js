@@ -1,15 +1,17 @@
 import React from "react";
+import JobList from "../JobList/JobList";
+import Form from "../common/Form/Form";
 
 const MyJobz = props => (
   <div>
     <p>My Jobs</p>
     <div>
       {this.props.myjobz.map(myjob => {
-        return <Myjob key={myjob.id} myjob={myjob} />;
+        return <JobList key={myjob.id} myjob={myjob} />;
       })}
     </div>
     <div>
-      <Addjob addJobHandler={this.props.addJobHandler} />
+      <Form type="button" value="Add Job" />
     </div>
   </div>
 );

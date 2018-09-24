@@ -1,5 +1,5 @@
 import React from "react";
-import "Form.css";
+import "./Form.css";
 
 const Form = props => {
   let content = null,
@@ -12,7 +12,7 @@ const Form = props => {
   if (!props.type) {
     props.type = "text";
   }
-  if (typeof props.change == "function") {
+  if (typeof props.change === "function") {
     change = () => props.change;
   }
   if (props.label) {
@@ -24,24 +24,13 @@ const Form = props => {
   }
 
   switch (props.type) {
-    case "text":
-      content = (
-        <input
-          type="text"
-          {...props.attributes}
-          className={props.class}
-          value={props.value}
-          onChange={() => change(event, props.id)}
-        />
-      );
-      break;
     case "select":
       content = (
         <select
           {...props.attributes}
           value={props.value}
           className={props.class}
-          onChange={() => change(event, props.id)}
+          onChange={() => change(props.id)}
         >
           {props.options.map(option => (
             <option key={option.id || option.value} value={option.value}>
@@ -56,7 +45,7 @@ const Form = props => {
         <textarea
           {...props.attributes}
           className={props.class}
-          onChange={() => change(event, props.id)}
+          onChange={() => change(props.id)}
         >
           {props.value}
         </textarea>
@@ -82,6 +71,16 @@ const Form = props => {
         />
       );
       break;
+    default:
+      content = (
+        <input
+          type="text"
+          {...props.attributes}
+          className={props.class}
+          value={props.value}
+          onChange={() => change(props.id)}
+        />
+      );
   }
   return (
     <div className="Form">
