@@ -53,7 +53,12 @@ class Jobz extends Component {
   onComponentDidMount() {}
 
   render(props) {
-    return <Jobz jobz={this.state.jobz} {...props} />;
+    return (
+      <div>
+        <p>JOBZ</p>
+      </div>
+    );
+    //<Jobz jobz={this.state.jobz} {...props} />;
   }
 }
 

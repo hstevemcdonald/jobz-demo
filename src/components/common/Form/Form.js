@@ -13,12 +13,14 @@ const Form = props => {
     props.type = "text";
   }
   if (typeof props.change === "function") {
-    change = () => props.change;
+    change = props.change;
+  } else {
+    change = null;
   }
   if (props.label) {
     label = (
       <label className="Form" {...props.label.attributes}>
-        {props.label.text}
+        {props.label}
       </label>
     );
   }
@@ -30,7 +32,7 @@ const Form = props => {
           {...props.attributes}
           value={props.value}
           className={props.class}
-          onChange={() => change(props.id)}
+          onChange={change}
         >
           {props.options.map(option => (
             <option key={option.id || option.value} value={option.value}>
