@@ -1,11 +1,12 @@
 import React from "react";
+import "./JobList.css";
 
 const JobList = props => (
-  <div>
-    <p>Company: {props.job.company}</p>
-    <p>Title: {props.job.title}</p>
-    <p>Description: {props.job.description}</p>
-    <p>Location: {props.job.location}</p>
+  <div className="JobList">
+    <p>Company: {props.company}</p>
+    <p>Title: {props.title}</p>
+    <p>Description: {props.description}</p>
+    <p>Location: {props.location}</p>
   </div>
 );
 

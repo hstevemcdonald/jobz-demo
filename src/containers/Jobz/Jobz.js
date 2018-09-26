@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Jobz from "../../components/Jobz/Jobz";
 
-class Jobz extends Component {
+class JobzContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -53,13 +54,8 @@ class Jobz extends Component {
   onComponentDidMount() {}
 
   render(props) {
-    return (
-      <div>
-        <p>JOBZ</p>
-      </div>
-    );
-    //<Jobz jobz={this.state.jobz} {...props} />;
+    return <Jobz jobz={this.state.jobz} {...props} />;
   }
 }
 
-export default Jobz;
+export default JobzContainer;

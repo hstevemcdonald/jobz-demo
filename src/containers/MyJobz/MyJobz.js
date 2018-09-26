@@ -55,7 +55,7 @@ class myjobz extends Component {
   }
 
   render(props) {
-    return <MyJobz {...props} />;
+    return <MyJobz myjobz={this.state.myjobz} {...props} />;
   }
 }
 

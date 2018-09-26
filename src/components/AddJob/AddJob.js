@@ -6,6 +6,7 @@ const Addjob = props => {
   return (
     <div>
       <h4>Add Job</h4>
+      <br />
       <Form
         label="Company"
         id="company"

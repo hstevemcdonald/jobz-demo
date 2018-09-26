@@ -1,22 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = () => {
   return (
-    <div>
-      <ul>
+    <React.Fragment>
+      <ul className="Navigation">
         <li>
-          <Link to="/">Jobz</Link>
+          <NavLink activeClassName="Navigation active" to="/home">
+            Jobz
+          </NavLink>
         </li>
         <li>
-          <Link to="/myjobz">My Jobz</Link>
+          <NavLink activeClassName="Navigation active" to="/myjobz">
+            My Jobz
+          </NavLink>
         </li>
         <li>
-          <Link to="/addjob">Add Job</Link>
+          <NavLink activeClassName="Navigation active" to="/addjob">
+            Add Job
+          </NavLink>
         </li>
       </ul>
-    </div>
+    </React.Fragment>
   );
 };
 
