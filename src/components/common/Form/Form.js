@@ -4,7 +4,8 @@ import "./Form.css";
 const Form = props => {
   let content = null,
     change = null,
-    label = null;
+    label = null,
+    click = null;
 
   if (!props.id) {
     return null;
@@ -16,6 +17,11 @@ const Form = props => {
     change = props.change;
   } else {
     change = null;
+  }
+  if (typeof props.click === "function") {
+    click = props.click;
+  } else {
+    click = null;
   }
   if (props.label) {
     label = (
@@ -47,7 +53,7 @@ const Form = props => {
         <textarea
           {...props.attributes}
           className={props.class}
-          onChange={() => change(props.id)}
+          onChange={e => change(e, props.id)}
         >
           {props.value}
         </textarea>
@@ -70,6 +76,7 @@ const Form = props => {
           type="button"
           {...props.attributes}
           value={props.value || "Submit"}
+          onClick={e => click(e, props.id)}
         />
       );
       break;
@@ -80,7 +87,7 @@ const Form = props => {
           {...props.attributes}
           className={props.class}
           value={props.value}
-          onChange={() => change(props.id)}
+          onChange={e => change(e, props.id)}
         />
       );
   }

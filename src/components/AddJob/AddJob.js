@@ -2,7 +2,6 @@ import React from "react";
 import Form from "../common/Form/Form";
 
 const Addjob = props => {
-  console.log(props);
   return (
     <div>
       <h4>Add Job</h4>
@@ -16,6 +15,9 @@ const Addjob = props => {
           name: "company"
         }}
         placeholder="Enter company"
+        change={e => {
+          props.change(e, "company");
+        }}
       />
       <Form
         label="Title"
@@ -25,6 +27,9 @@ const Addjob = props => {
         }}
         type="text"
         placeholder="Enter job title"
+        change={e => {
+          props.change(e, "title");
+        }}
       />
       <Form
         label="Description"
@@ -36,26 +41,31 @@ const Addjob = props => {
           cols: "50"
         }}
         placeholder="Enter job description"
+        change={e => {
+          props.change(e, "description");
+        }}
       />
       <Form
         label="Location"
         id="location"
         name="location"
         type="select"
-        change={props.change}
         options={[
+          { displayValue: "-----", value: "" },
           { displayValue: "Mountain View, CA", value: "MTNVIEW" },
           { displayValue: "Oakland, CA", value: "OAKLAND" },
           { displayValue: "San Francisco, CA", value: "SF" }
         ]}
         placeholder="Enter job location"
+        change={e => {
+          props.change(e, "location");
+        }}
       />
-
       <Form
         id="addJobButton"
         value="Add Job"
         type="button"
-        clickHandler={props.addJobHandler}
+        click={props.onSubmit}
       />
     </div>
   );

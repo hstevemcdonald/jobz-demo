@@ -1,17 +1,22 @@
 import React from "react";
-import JobList from "../JobList/JobList";
 import Form from "../common/Form/Form";
+import JobList from "../JobList/JobList";
 
-const MyJobz = props => (
-  <div>
-    <h4>My Jobz</h4>
-    {props.myjobz.map(myjob => {
-      return <JobList key={myjob.id} myjob={myjob} />;
-    })}
+const MyJobz = ({ myjobz }) => {
+  console.log("Jobz", myjobz);
+  return (
     <div>
-      <Form type="button" value="Add Job" />
+      <h4>My Jobz</h4>
+      {
+        (myjobz.length) ? myjobz.map(myjob => {
+          return <JobList key={myjob.id} {...myjob} />;
+        }) : (<h6>No jobs have been saved.</h6>)
+      }
+      <div>
+        <Form type="button" value="Add Job" />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default MyJobz;
